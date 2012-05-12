@@ -29,7 +29,7 @@
 		
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
-		_scrappy = [CCSprite spriteWithCGImage:[[UIImage imageNamed:@"Icon.png"] CGImage] key:@"scrappy"];
+		_scrappy = [[SGScrappyCharacter alloc] init];
 		self.scrappy.position = ccp( winSize.width/2, winSize.height/2 );
 		[self addChild:self.scrappy];
         

@@ -10,4 +10,20 @@
 
 @implementation SGScrappyCharacter
 
+- (id)init
+{
+    self = [super initWithCGImage:[[UIImage imageNamed:@"Icon.png"] CGImage] key:@"scrappy"];
+    
+    if (self) {
+        
+    }
+    
+    return self;
+}
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
 @end
