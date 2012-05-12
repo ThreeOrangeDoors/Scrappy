@@ -14,5 +14,7 @@
 + (CCScene *)scene;
 
 @property (nonatomic, retain) SGScrappyCharacter *scrappy;
+@property (nonatomic, retain) CCTMXTiledMap *tileMap;
+@property (nonatomic, retain) CCTMXLayer *background;
 
 @end
