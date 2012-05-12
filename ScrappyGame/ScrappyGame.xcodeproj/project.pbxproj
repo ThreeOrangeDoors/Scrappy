@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		799B5761155E2CCC004A84B9 /* SGMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B5760155E2CCC004A84B9 /* SGMainMenuScene.m */; };
+		799B5764155E30D4004A84B9 /* SGTileMapLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B5763155E30D4004A84B9 /* SGTileMapLevel.m */; };
+		799B5768155E3130004A84B9 /* SGScrappyCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B5767155E3130004A84B9 /* SGScrappyCharacter.m */; };
 		79FD1062155E20F8000807AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FD1061155E20F8000807AD /* QuartzCore.framework */; };
 		79FD1064155E20F8000807AD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FD1063155E20F8000807AD /* OpenGLES.framework */; };
 		79FD1066155E20F8000807AD /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FD1065155E20F8000807AD /* OpenAL.framework */; };
@@ -128,10 +131,15 @@
 		79FD11DE155E20FA000807AD /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 79FD11DD155E20FA000807AD /* vec4.c */; };
 		79FD11E3155E20FA000807AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FD11E2155E20FA000807AD /* main.m */; };
 		79FD11E6155E20FA000807AD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FD11E5155E20FA000807AD /* AppDelegate.m */; };
-		79FD11E9155E20FA000807AD /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FD11E8155E20FA000807AD /* HelloWorldLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		799B575F155E2CCC004A84B9 /* SGMainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGMainMenuScene.h; sourceTree = "<group>"; };
+		799B5760155E2CCC004A84B9 /* SGMainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGMainMenuScene.m; sourceTree = "<group>"; };
+		799B5762155E30D3004A84B9 /* SGTileMapLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTileMapLevel.h; sourceTree = "<group>"; };
+		799B5763155E30D4004A84B9 /* SGTileMapLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTileMapLevel.m; sourceTree = "<group>"; };
+		799B5766155E3130004A84B9 /* SGScrappyCharacter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScrappyCharacter.h; sourceTree = "<group>"; };
+		799B5767155E3130004A84B9 /* SGScrappyCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScrappyCharacter.m; sourceTree = "<group>"; };
 		79FD105D155E20F8000807AD /* ScrappyGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrappyGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FD1061155E20F8000807AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		79FD1063155E20F8000807AD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -386,8 +394,6 @@
 		79FD11E2155E20FA000807AD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		79FD11E4155E20FA000807AD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		79FD11E5155E20FA000807AD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		79FD11E7155E20FA000807AD /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		79FD11E8155E20FA000807AD /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +416,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		799B575E155E2CBA004A84B9 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				799B575F155E2CCC004A84B9 /* SGMainMenuScene.h */,
+				799B5760155E2CCC004A84B9 /* SGMainMenuScene.m */,
+				799B5762155E30D3004A84B9 /* SGTileMapLevel.h */,
+				799B5763155E30D4004A84B9 /* SGTileMapLevel.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		799B5765155E30FB004A84B9 /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				799B5766155E3130004A84B9 /* SGScrappyCharacter.h */,
+				799B5767155E3130004A84B9 /* SGScrappyCharacter.m */,
+			);
+			name = Sprites;
+			sourceTree = "<group>";
+		};
 		79FD1052155E20F8000807AD = {
 			isa = PBXGroup;
 			children = (
@@ -446,10 +472,10 @@
 		79FD1073155E20F8000807AD /* ScrappyGame */ = {
 			isa = PBXGroup;
 			children = (
+				799B5765155E30FB004A84B9 /* Sprites */,
+				799B575E155E2CBA004A84B9 /* Scenes */,
 				79FD11E4155E20FA000807AD /* AppDelegate.h */,
 				79FD11E5155E20FA000807AD /* AppDelegate.m */,
-				79FD11E7155E20FA000807AD /* HelloWorldLayer.h */,
-				79FD11E8155E20FA000807AD /* HelloWorldLayer.m */,
 				79FD1074155E20F8000807AD /* Resources */,
 				79FD108C155E20F8000807AD /* libs */,
 				79FD11E0155E20FA000807AD /* Supporting Files */,
@@ -989,7 +1015,9 @@
 				79FD11DE155E20FA000807AD /* vec4.c in Sources */,
 				79FD11E3155E20FA000807AD /* main.m in Sources */,
 				79FD11E6155E20FA000807AD /* AppDelegate.m in Sources */,
-				79FD11E9155E20FA000807AD /* HelloWorldLayer.m in Sources */,
+				799B5761155E2CCC004A84B9 /* SGMainMenuScene.m in Sources */,
+				799B5764155E30D4004A84B9 /* SGTileMapLevel.m in Sources */,
+				799B5768155E3130004A84B9 /* SGScrappyCharacter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

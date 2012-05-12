@@ -9,7 +9,7 @@
 #import "cocos2d.h"
 
 #import "AppDelegate.h"
-#import "HelloWorldLayer.h"
+#import "SGMainMenuScene.h"
 
 @implementation AppController
 
@@ -69,7 +69,7 @@
 	// Assume that PVR images have premultiplied alpha
 	[CCTexture2D PVRImagesHavePremultipliedAlpha:YES];
 
-	[director_ pushScene: [HelloWorldLayer scene]]; 
+	[director_ pushScene: [SGMainMenuScene scene]]; 
 
 	return YES;
 }
@@ -82,26 +82,26 @@
 
 
 // getting a call, pause the game
--(void) applicationWillResignActive:(UIApplication *)application
+- (void)applicationWillResignActive:(UIApplication *)application
 {
 	if( [navController_ visibleViewController] == director_ )
 		[director_ pause];
 }
 
 // call got rejected
--(void) applicationDidBecomeActive:(UIApplication *)application
+- (void)applicationDidBecomeActive:(UIApplication *)application
 {
 	if( [navController_ visibleViewController] == director_ )
 		[director_ resume];
 }
 
--(void) applicationDidEnterBackground:(UIApplication*)application
+- (void)applicationDidEnterBackground:(UIApplication*)application
 {
 	if( [navController_ visibleViewController] == director_ )
 		[director_ stopAnimation];
 }
 
--(void) applicationWillEnterForeground:(UIApplication*)application
+- (void)applicationWillEnterForeground:(UIApplication*)application
 {
 	if( [navController_ visibleViewController] == director_ )
 		[director_ startAnimation];
@@ -120,7 +120,7 @@
 }
 
 // next delta time will be zero
--(void) applicationSignificantTimeChange:(UIApplication *)application
+- (void) applicationSignificantTimeChange:(UIApplication *)application
 {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }

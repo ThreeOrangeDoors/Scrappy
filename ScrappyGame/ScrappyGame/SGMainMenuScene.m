@@ -1,39 +1,34 @@
 //
-//  HelloWorldLayer.m
+//  SGMainMenuScene.m
 //  ScrappyGame
 //
 //  Created by Omid Mikhchi on 5/11/12.
-//  Copyright ThreeOrangeDoors 2012. All rights reserved.
+//  Copyright (c) 2012 ThreeOrangeDoors. All rights reserved.
 //
 
+#import "SGMainMenuScene.h"
+#import "SGTileMapLevel.h"
 
-#import "HelloWorldLayer.h"
-#import "AppDelegate.h"
+@implementation SGMainMenuScene
 
-#pragma mark - HelloWorldLayer
-
-@implementation HelloWorldLayer
-
-+(CCScene *) scene
++ (CCScene *)scene
 {
 	CCScene *scene = [CCScene node];
-	
-	HelloWorldLayer *layer = [HelloWorldLayer node];
-	
+	SGMainMenuScene *layer = [SGMainMenuScene node];
 	[scene addChild: layer];
 	
 	return scene;
 }
 
--(id) init
+- (id)init
 {
-    self = [super init];
+    self = [super initWithColor:ccc4(51,51,51,255)];
 	if (self){
 		
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Scrappy" fontName:@"Helvetica" fontSize:64];
-
+        
 		CGSize size = [[CCDirector sharedDirector] winSize];
-	
+        
 		label.position =  ccp( size.width /2 , size.height/2 );
 		
 		[self addChild: label];
@@ -43,9 +38,9 @@
 		
 		CCMenuItem *itemStartGame = [CCMenuItemFont itemWithString:@"Start Game" block:^(id sender) {
 			
-			
+			[[CCDirector sharedDirector] pushScene:[CCTransitionMoveInR transitionWithDuration:0.5f scene: [SGTileMapLevel scene]]]; 
 		}
-									   ];
+                                     ];
 		
 		CCMenu *menu = [CCMenu menuWithItems:itemStartGame, nil];
 		
@@ -53,14 +48,14 @@
 		[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
 		
 		[self addChild:menu];
-
+        
 	}
 	return self;
 }
 
-- (void) dealloc
+- (void)dealloc
 {
-
+    
 	[super dealloc];
 }
 
