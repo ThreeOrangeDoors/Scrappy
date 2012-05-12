@@ -843,7 +843,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "TablTap LLC";
+				ORGANIZATIONNAME = ThreeOrangeDoors;
 			};
 			buildConfigurationList = 79FD1057155E20F8000807AD /* Build configuration list for PBXProject "ScrappyGame" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1093,6 +1093,7 @@
 				79FD11EE155E20FA000807AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

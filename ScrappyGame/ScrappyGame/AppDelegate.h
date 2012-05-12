@@ -3,7 +3,7 @@
 //  ScrappyGame
 //
 //  Created by Omid Mikhchi on 5/11/12.
-//  Copyright TablTap LLC 2012. All rights reserved.
+//  Copyright ThreeOrangeDoors 2012. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
