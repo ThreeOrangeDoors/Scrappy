@@ -16,6 +16,8 @@
 @synthesize scrappy = _scrappy;
 @synthesize tileMap = _tileMap;
 @synthesize background = _background;
+@synthesize holdingLeft = _holdingLeft;
+@synthesize holdingRight = _holdingRight;
 
 + (CCScene *)scene
 {
@@ -28,30 +30,45 @@
 
 - (void)simulateGravity
 {
-//    NSLog(@"grav");
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
-    
     CGPoint oldPosition = self.scrappy.position;
     
-    if (oldPosition.y-28.5 < 0) {
-        oldPosition.y = 28.5;
+    if (oldPosition.y-32 < 0) {
+        oldPosition.y = 31.9;
     } else {
         oldPosition.y-=1;
     }
     self.scrappy.position = ccp(oldPosition.x, oldPosition.y);
 }
 
+- (void)tickScrappy {
+    if (_holdingLeft && !_holdingRight) {
+        // Run left
+        self.position = ccp(self.position.x+1.0f, self.position.y);
+        self.scrappy.position = ccp(self.scrappy.position.x-1.0f, self.scrappy.position.y);
+    } else if (_holdingRight && !_holdingLeft) {
+        // Run right
+        self.position = ccp(self.position.x-1.0f, self.position.y);
+        self.scrappy.position = ccp(self.scrappy.position.x+1.0f, self.scrappy.position.y);
+    } else if (_holdingLeft && _holdingRight) {
+        // Activate item
+    } else {
+        // stop
+    }
+}
+
 - (id)init
 {
     self = [super initWithColor:ccc4(51,51,51,255)];
 	if (self) {
+        _holdingLeft = _holdingRight = false;
 		
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
         _tileMap = [[CCTMXTiledMap tiledMapWithTMXFile:@"level.tmx"] retain];
         _background = [[self.tileMap layerNamed:@"Background"] retain];
         
-        [self addChild:self.tileMap z:-1];
+        //[self addChild:self.tileMap z:-1];
+        [self addChild:self.tileMap];
         
 		_scrappy = [[SGScrappyCharacter alloc] init];
 		self.scrappy.position = ccp( winSize.width/2, winSize.height/2 );
@@ -60,6 +77,7 @@
         self.isTouchEnabled = YES;
         
         [self schedule:@selector(simulateGravity) interval:1/30];
+        [self schedule:@selector(tickScrappy) interval:1/30];
 	}
 	return self;
 }
@@ -82,9 +100,27 @@
     return ccp(x, y);
 }
 
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"Tap began");
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+
+    UITouch *touch = [touches anyObject];
+	CGPoint touchLocation = [self convertTouchToNodeSpace: touch];
+    NSLog(@"touchLocation.x:%f, touchLocation.y:%f", touchLocation.x, touchLocation.y);
+    
+    if (touchLocation.x < winSize.width/2) {
+        _holdingLeft = true;
+    } else {
+        _holdingRight = true;
+    }
+}
+
 - (void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"Tapped");
+    NSLog(@"Tap ended");
+    
+    _holdingLeft = _holdingRight = false;
     
     UITouch *touch = [touches anyObject];
 	CGPoint touchLocation = [self convertTouchToNodeSpace: touch];
@@ -103,5 +139,7 @@
     NSLog(@"tileCoord.x:%f, tileCoord.y:%f", tileCoord.x, tileCoord.y);
     NSLog(@"tileGid:%i", tileGid);
 }
+
+
 
 @end

@@ -425,6 +425,7 @@
 			children = (
 				799B575F155E2CCC004A84B9 /* SGMainMenuScene.h */,
 				799B5760155E2CCC004A84B9 /* SGMainMenuScene.m */,
+				79FD11E4155E20FA000807AD /* AppDelegate.h */,
 				799B5762155E30D3004A84B9 /* SGTileMapLevel.h */,
 				799B5763155E30D4004A84B9 /* SGTileMapLevel.m */,
 			);
@@ -478,7 +479,6 @@
 			children = (
 				799B5765155E30FB004A84B9 /* Sprites */,
 				799B575E155E2CBA004A84B9 /* Scenes */,
-				79FD11E4155E20FA000807AD /* AppDelegate.h */,
 				79FD11E5155E20FA000807AD /* AppDelegate.m */,
 				79FD1074155E20F8000807AD /* Resources */,
 				79FD108C155E20F8000807AD /* libs */,
