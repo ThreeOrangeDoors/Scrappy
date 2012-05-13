@@ -1,8 +1,8 @@
 //
 //  main.m
-//  ScrappyGame
+//  ScrappyMunk
 //
-//  Created by Omid Mikhchi on 5/11/12.
+//  Created by Tao Flaherty on 5/13/12.
 //  Copyright ThreeOrangeDoors 2012. All rights reserved.
 //
 
