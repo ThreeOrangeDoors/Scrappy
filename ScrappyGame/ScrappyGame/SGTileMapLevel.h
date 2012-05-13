@@ -16,8 +16,10 @@
 @property (nonatomic, retain) SGScrappyCharacter *scrappy;
 @property (nonatomic, retain) CCTMXTiledMap *tileMap;
 @property (nonatomic, retain) CCTMXLayer *background;
+@property (nonatomic) bool scrappyIsJumping;
 @property (nonatomic) bool holdingLeft;
 @property (nonatomic) bool holdingRight;
+@property (nonatomic) CGPoint lastTouchLocation;
 
 @end
 
