@@ -41,13 +41,14 @@
 }
 
 - (void)tickScrappy {
+    NSLog(@"holdingLeft: %s holdingRight: %s", (_holdingLeft)?"true":"false", (_holdingRight)?"true":"false");
     if (_holdingLeft && !_holdingRight) {
         // Run left
-        self.position = ccp(self.position.x+1.0f, self.position.y);
+        //self.position = ccp(self.position.x+1.0f, self.position.y);
         self.scrappy.position = ccp(self.scrappy.position.x-1.0f, self.scrappy.position.y);
     } else if (_holdingRight && !_holdingLeft) {
         // Run right
-        self.position = ccp(self.position.x-1.0f, self.position.y);
+        //self.position = ccp(self.position.x-1.0f, self.position.y);
         self.scrappy.position = ccp(self.scrappy.position.x+1.0f, self.scrappy.position.y);
     } else if (_holdingLeft && _holdingRight) {
         // Activate item
@@ -120,7 +121,7 @@
 {
     NSLog(@"Tap ended");
     
-    //_holdingLeft = _holdingRight = false;
+    _holdingLeft = _holdingRight = false;
     
     UITouch *touch = [touches anyObject];
 	CGPoint touchLocation = [self convertTouchToNodeSpace: touch];
