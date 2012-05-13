@@ -9,7 +9,7 @@
 #import "SGTileMapLevel.h"
 #import "SimpleAudioEngine.h"
 
-#define tileMapSquareLength 32
+#define tileMapSquareLength 64
 
 @implementation SGTileMapLevel
 
@@ -92,9 +92,9 @@
 		
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
-        _tileMap = [[CCTMXTiledMap tiledMapWithTMXFile:@"level.tmx"] retain];
+        _tileMap = [[CCTMXTiledMap tiledMapWithTMXFile:@"test1.tmx"] retain];
         _foreground = [[self.tileMap layerNamed:@"Foreground"] retain];
-        _meta = [[self.tileMap layerNamed:@"Meta"] retain];
+//        _meta = [[self.tileMap layerNamed:@"Meta"] retain];
         
         self.meta.visible = NO;
         
