@@ -19,6 +19,7 @@
 @synthesize meta = _meta;
 @synthesize holdingLeft = _holdingLeft;
 @synthesize holdingRight = _holdingRight;
+@synthesize lastTouchLocation = lastTouchLocation;
 
 + (CCScene *)scene
 {
@@ -35,6 +36,7 @@
     
     if (oldPosition.y-32 < 0) {
         oldPosition.y = 31.9;
+        scrappyIsJumping = false;
     } else {
         CGPoint tileCoord = [self tileCoordForPosition:oldPosition];
         
@@ -140,6 +142,7 @@
 
     UITouch *touch = [touches anyObject];
 	CGPoint touchLocation = [self convertTouchToNodeSpace: touch];
+    lastTouchLocation = touchLocation;
     NSLog(@"touchLocation.x:%f, touchLocation.y:%f", touchLocation.x, touchLocation.y);
     
     if (touchLocation.x < winSize.width/2) {
@@ -162,17 +165,22 @@
     CGPoint tileCoord = [self tileCoordForPosition:touchLocation];
     int tileGid = [self.foreground tileGIDAt:tileCoord];
     
-    CGPoint oldPosition = self.scrappy.position;
-    // bad jump code
-    self.scrappy.position = ccp(oldPosition.x, oldPosition.y+35);
-    
     NSLog(@"tileCoord.x:%f, tileCoord.y:%f", tileCoord.x, tileCoord.y);
     NSLog(@"tileGid:%i", tileGid);
 }
 
 - (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
-    //[touch locationInView:self.view];
+    CGPoint touchLocation = [self convertTouchToNodeSpace: touch];
+    if ((touchLocation.y - lastTouchLocation.y) > 5.0f) {
+        scrappyIsJumping = true;
+        //CGPoint oldPosition = self.scrappy.position;
+        // bad jump code
+        //self.scrappy.position = ccp(oldPosition.x, oldPosition.y+35);        
+        
+    }
+    
+    lastTouchLocation = touchLocation;
 }
 
 

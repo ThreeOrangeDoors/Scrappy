@@ -20,6 +20,7 @@
 @property (nonatomic, retain) CCTMXLayer *meta;
 @property (nonatomic) bool holdingLeft;
 @property (nonatomic) bool holdingRight;
+@property (nonatomic) CGPoint lastTouchLocation;
 
 @end
 
