@@ -195,3 +195,12 @@
 
 
 @end
+
+
+ CGRect robotRect = [robot getSides];
+ CGRect blockRect = [block getSides];
+ 
+ if(CGRectIntersectsRect(robotRect, blockRect)) 
+ {
+ ...
+ }
