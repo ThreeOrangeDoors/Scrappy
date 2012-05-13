@@ -73,7 +73,6 @@
         _tileMap = [[CCTMXTiledMap tiledMapWithTMXFile:@"level.tmx"] retain];
         _background = [[self.tileMap layerNamed:@"Background"] retain];
         
-        //[self addChild:self.tileMap z:-1];
         [self addChild:self.tileMap];
         
 		_scrappy = [[SGScrappyCharacter alloc] init];
@@ -135,11 +134,12 @@
     CGPoint tileCoord = [self tileCoordForPosition:touchLocation];
     int tileGid = [self.background tileGIDAt:tileCoord];
     
-    //[self.lavaLayer setTileGID:57 at:tileCoord];
-    CCSprite *tile = [self.background tileAt:tileCoord];
-    tile.opacity = 255/2;
+//    [self.background setTileGID:57 at:tileCoord];
+//    CCSprite *tile = [self.background tileAt:tileCoord];
+//    tile.opacity = 255/2;
     
     CGPoint oldPosition = self.scrappy.position;
+    // bad jump code
     self.scrappy.position = ccp(oldPosition.x, oldPosition.y+35);
     
     NSLog(@"tileCoord.x:%f, tileCoord.y:%f", tileCoord.x, tileCoord.y);
