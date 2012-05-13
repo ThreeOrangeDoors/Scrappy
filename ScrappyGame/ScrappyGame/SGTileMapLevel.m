@@ -17,6 +17,7 @@
 @synthesize tileMap = _tileMap;
 @synthesize foreground = _foreground;
 @synthesize meta = _meta;
+@synthesize scrappyIsJumping = scrappyIsJumping;
 @synthesize holdingLeft = _holdingLeft;
 @synthesize holdingRight = _holdingRight;
 @synthesize lastTouchLocation = lastTouchLocation;
@@ -85,12 +86,12 @@
 - (id)init
 {
     self = [super initWithColor:ccc4(51,51,51,255)];
-	if (self) {
+    if (self) {    
 //        [[SimpleAudioEngine sharedEngine] preloadEffect:@"personSavedSound.caf"];
         [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Scrappy_Demo.wav"];
 //        [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5];
         
-        _holdingLeft = _holdingRight = false;
+        scrappyIsJumping = _holdingLeft = _holdingRight = false;
 		
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         

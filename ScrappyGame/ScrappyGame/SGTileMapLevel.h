@@ -18,6 +18,7 @@
 @property (nonatomic, retain) CCTMXTiledMap *tileMap;
 @property (nonatomic, retain) CCTMXLayer *foreground;
 @property (nonatomic, retain) CCTMXLayer *meta;
+@property (nonatomic) bool scrappyIsJumping;
 @property (nonatomic) bool holdingLeft;
 @property (nonatomic) bool holdingRight;
 @property (nonatomic) CGPoint lastTouchLocation;
