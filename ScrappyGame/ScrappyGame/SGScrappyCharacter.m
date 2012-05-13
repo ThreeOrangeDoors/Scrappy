@@ -10,12 +10,14 @@
 
 @implementation SGScrappyCharacter
 
+@synthesize yVelocity = yVelocity;
+
 - (id)init
 {
     self = [super initWithCGImage:[[UIImage imageNamed:@"Icon.png"] CGImage] key:@"scrappy"];
     
     if (self) {
-        
+        yVelocity = 0;
     }
     
     return self;

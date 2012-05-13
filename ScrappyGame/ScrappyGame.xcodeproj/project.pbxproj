@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1673FF8615602B1100498F32 /* Tileset.png in Resources */ = {isa = PBXBuildFile; fileRef = 1673FF8515602B1100498F32 /* Tileset.png */; };
+		1694B3FA1560295B00A32E46 /* Collision_Tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 1694B3F91560295B00A32E46 /* Collision_Tiles.png */; };
 		799B5761155E2CCC004A84B9 /* SGMainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B5760155E2CCC004A84B9 /* SGMainMenuScene.m */; };
 		799B5764155E30D4004A84B9 /* SGTileMapLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B5763155E30D4004A84B9 /* SGTileMapLevel.m */; };
 		799B5768155E3130004A84B9 /* SGScrappyCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B5767155E3130004A84B9 /* SGScrappyCharacter.m */; };
@@ -140,6 +142,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1673FF8515602B1100498F32 /* Tileset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tileset.png; sourceTree = "<group>"; };
+		1694B3F91560295B00A32E46 /* Collision_Tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Collision_Tiles.png; sourceTree = "<group>"; };
 		799B575F155E2CCC004A84B9 /* SGMainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGMainMenuScene.h; sourceTree = "<group>"; };
 		799B5760155E2CCC004A84B9 /* SGMainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGMainMenuScene.m; sourceTree = "<group>"; };
 		799B5762155E30D3004A84B9 /* SGTileMapLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTileMapLevel.h; sourceTree = "<group>"; };
@@ -500,6 +504,7 @@
 			children = (
 				799B57A6155F6B39004A84B9 /* test1.tmx */,
 				799B57A7155F6B39004A84B9 /* Tilesheet.png */,
+				1673FF8515602B1100498F32 /* Tileset.png */,
 				799B57A0155F6049004A84B9 /* Scrappy_Demo.wav */,
 				799B579E155F5FF6004A84B9 /* meta_tiles.png */,
 				799B5778155E47D9004A84B9 /* level.tmx */,
@@ -509,6 +514,7 @@
 				79FD1079155E20F8000807AD /* fps_images-hd.png */,
 				79FD107B155E20F8000807AD /* fps_images-ipadhd.png */,
 				79FD107D155E20F8000807AD /* Icon-72.png */,
+				1694B3F91560295B00A32E46 /* Collision_Tiles.png */,
 				79FD107F155E20F8000807AD /* Icon-Small-50.png */,
 				79FD1081155E20F8000807AD /* Icon-Small.png */,
 				79FD1083155E20F8000807AD /* Icon-Small@2x.png */,
@@ -929,6 +935,8 @@
 				799B57A1155F6049004A84B9 /* Scrappy_Demo.wav in Resources */,
 				799B57A8155F6B39004A84B9 /* test1.tmx in Resources */,
 				799B57A9155F6B39004A84B9 /* Tilesheet.png in Resources */,
+				1694B3FA1560295B00A32E46 /* Collision_Tiles.png in Resources */,
+				1673FF8615602B1100498F32 /* Tileset.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

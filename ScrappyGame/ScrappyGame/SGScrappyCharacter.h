@@ -10,4 +10,6 @@
 
 @interface SGScrappyCharacter : CCSprite
 
+@property (nonatomic) double yVelocity;
+
 @end

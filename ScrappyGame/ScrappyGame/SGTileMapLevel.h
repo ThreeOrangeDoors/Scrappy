@@ -9,10 +9,13 @@
 #import "cocos2d.h"
 #import "SGScrappyCharacter.h"
 
+#define GRAVITY 0.35f
+
 @interface SGTileMapLevel : CCLayerColor 
 
 + (CCScene *)scene;
 - (CGPoint)tileCoordForPosition:(CGPoint)position;
+- (bool)scrappyIsStandingOnTheGround;
 
 @property (nonatomic, retain) SGScrappyCharacter *scrappy;
 @property (nonatomic, retain) CCTMXTiledMap *tileMap;
