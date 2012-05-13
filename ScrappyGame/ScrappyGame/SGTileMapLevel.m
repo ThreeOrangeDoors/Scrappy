@@ -134,10 +134,6 @@
     CGPoint tileCoord = [self tileCoordForPosition:touchLocation];
     int tileGid = [self.background tileGIDAt:tileCoord];
     
-//    [self.background setTileGID:57 at:tileCoord];
-//    CCSprite *tile = [self.background tileAt:tileCoord];
-//    tile.opacity = 255/2;
-    
     CGPoint oldPosition = self.scrappy.position;
     // bad jump code
     self.scrappy.position = ccp(oldPosition.x, oldPosition.y+35);
@@ -145,6 +141,12 @@
     NSLog(@"tileCoord.x:%f, tileCoord.y:%f", tileCoord.x, tileCoord.y);
     NSLog(@"tileGid:%i", tileGid);
 }
+
+- (void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    //[touch locationInView:self.view];
+}
+
 
 
 
