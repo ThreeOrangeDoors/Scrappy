@@ -12,6 +12,8 @@
 		799B5768155E3130004A84B9 /* SGScrappyCharacter.m in Sources */ = {isa = PBXBuildFile; fileRef = 799B5767155E3130004A84B9 /* SGScrappyCharacter.m */; };
 		799B577A155E47D9004A84B9 /* level.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 799B5778155E47D9004A84B9 /* level.tmx */; };
 		799B577B155E47D9004A84B9 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 799B5779155E47D9004A84B9 /* tmw_desert_spacing.png */; };
+		799B579F155F5FF6004A84B9 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 799B579E155F5FF6004A84B9 /* meta_tiles.png */; };
+		799B57A1155F6049004A84B9 /* Scrappy_Demo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 799B57A0155F6049004A84B9 /* Scrappy_Demo.wav */; };
 		79FD1062155E20F8000807AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FD1061155E20F8000807AD /* QuartzCore.framework */; };
 		79FD1064155E20F8000807AD /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FD1063155E20F8000807AD /* OpenGLES.framework */; };
 		79FD1066155E20F8000807AD /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79FD1065155E20F8000807AD /* OpenAL.framework */; };
@@ -144,6 +146,8 @@
 		799B5767155E3130004A84B9 /* SGScrappyCharacter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScrappyCharacter.m; sourceTree = "<group>"; };
 		799B5778155E47D9004A84B9 /* level.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = level.tmx; sourceTree = "<group>"; };
 		799B5779155E47D9004A84B9 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
+		799B579E155F5FF6004A84B9 /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
+		799B57A0155F6049004A84B9 /* Scrappy_Demo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrappy_Demo.wav; sourceTree = "<group>"; };
 		79FD105D155E20F8000807AD /* ScrappyGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrappyGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FD1061155E20F8000807AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		79FD1063155E20F8000807AD /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -490,6 +494,8 @@
 		79FD1074155E20F8000807AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				799B57A0155F6049004A84B9 /* Scrappy_Demo.wav */,
+				799B579E155F5FF6004A84B9 /* meta_tiles.png */,
 				799B5778155E47D9004A84B9 /* level.tmx */,
 				799B5779155E47D9004A84B9 /* tmw_desert_spacing.png */,
 				79FD1075155E20F8000807AD /* Default.png */,
@@ -913,6 +919,8 @@
 				79FD11C4155E20FA000807AD /* ChangeLog in Resources */,
 				799B577A155E47D9004A84B9 /* level.tmx in Resources */,
 				799B577B155E47D9004A84B9 /* tmw_desert_spacing.png in Resources */,
+				799B579F155F5FF6004A84B9 /* meta_tiles.png in Resources */,
+				799B57A1155F6049004A84B9 /* Scrappy_Demo.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

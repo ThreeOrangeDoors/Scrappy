@@ -12,10 +12,12 @@
 @interface SGTileMapLevel : CCLayerColor 
 
 + (CCScene *)scene;
+- (CGPoint)tileCoordForPosition:(CGPoint)position;
 
 @property (nonatomic, retain) SGScrappyCharacter *scrappy;
 @property (nonatomic, retain) CCTMXTiledMap *tileMap;
-@property (nonatomic, retain) CCTMXLayer *background;
+@property (nonatomic, retain) CCTMXLayer *foreground;
+@property (nonatomic, retain) CCTMXLayer *meta;
 @property (nonatomic) bool holdingLeft;
 @property (nonatomic) bool holdingRight;
 

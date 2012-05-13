@@ -15,7 +15,8 @@
 
 @synthesize scrappy = _scrappy;
 @synthesize tileMap = _tileMap;
-@synthesize background = _background;
+@synthesize foreground = _foreground;
+@synthesize meta = _meta;
 @synthesize holdingLeft = _holdingLeft;
 @synthesize holdingRight = _holdingRight;
 
@@ -35,14 +36,31 @@
     if (oldPosition.y-32 < 0) {
         oldPosition.y = 31.9;
     } else {
-        oldPosition.y-=1;
+        CGPoint tileCoord = [self tileCoordForPosition:oldPosition];
+        
+        int tileGid = [self.meta tileGIDAt:tileCoord];
+        
+        if (tileGid) {
+            NSDictionary *properties = [self.tileMap propertiesForGID:tileGid];
+            
+            if (properties) {
+                NSString *collision = [properties valueForKey:@"Collidable"];
+                
+                if (collision && [collision compare:@"True"] == NSOrderedSame) {
+                    return;
+                }
+            }
+        } else {
+            oldPosition.y-=1;
+        }
     }
+    
     self.scrappy.position = ccp(oldPosition.x, oldPosition.y);
 }
 
 - (void)tickScrappy {
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    NSLog(@"holdingLeft: %s holdingRight: %s", (_holdingLeft)?"true":"false", (_holdingRight)?"true":"false");
+//    NSLog(@"holdingLeft: %s holdingRight: %s", (_holdingLeft)?"true":"false", (_holdingRight)?"true":"false");
     if (_holdingLeft && !_holdingRight) {
         // Run left
         //self.position = ccp(self.position.x+1.0f, self.position.y);
@@ -66,12 +84,19 @@
 {
     self = [super initWithColor:ccc4(51,51,51,255)];
 	if (self) {
+//        [[SimpleAudioEngine sharedEngine] preloadEffect:@"personSavedSound.caf"];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Scrappy_Demo.wav"];
+//        [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5];
+        
         _holdingLeft = _holdingRight = false;
 		
         CGSize winSize = [[CCDirector sharedDirector] winSize];
         
         _tileMap = [[CCTMXTiledMap tiledMapWithTMXFile:@"level.tmx"] retain];
-        _background = [[self.tileMap layerNamed:@"Background"] retain];
+        _foreground = [[self.tileMap layerNamed:@"Foreground"] retain];
+        _meta = [[self.tileMap layerNamed:@"Meta"] retain];
+        
+        self.meta.visible = NO;
         
         [self addChild:self.tileMap];
         
@@ -90,6 +115,9 @@
 - (void)dealloc
 {
     [_scrappy release];
+    [_tileMap release];
+    [_foreground release];
+    [_meta release];
 	[super dealloc];
 }
 
@@ -132,7 +160,7 @@
     NSLog(@"touchLocation.x:%f, touchLocation.y:%f", touchLocation.x, touchLocation.y);
     
     CGPoint tileCoord = [self tileCoordForPosition:touchLocation];
-    int tileGid = [self.background tileGIDAt:tileCoord];
+    int tileGid = [self.foreground tileGIDAt:tileCoord];
     
     CGPoint oldPosition = self.scrappy.position;
     // bad jump code
