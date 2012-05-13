@@ -41,6 +41,7 @@
 }
 
 - (void)tickScrappy {
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
     NSLog(@"holdingLeft: %s holdingRight: %s", (_holdingLeft)?"true":"false", (_holdingRight)?"true":"false");
     if (_holdingLeft && !_holdingRight) {
         // Run left
@@ -55,6 +56,10 @@
     } else {
         // stop
     }
+    double camX = self.scrappy.position.x - winSize.width/2;
+    double camY = self.scrappy.position.y - winSize.height/2;
+    [self.camera setCenterX:camX centerY:camY centerZ:0];
+    [self.camera setEyeX:camX eyeY:camY eyeZ:415];
 }
 
 - (id)init
