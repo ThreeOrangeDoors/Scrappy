@@ -120,7 +120,7 @@
 {
     NSLog(@"Tap ended");
     
-    _holdingLeft = _holdingRight = false;
+    //_holdingLeft = _holdingRight = false;
     
     UITouch *touch = [touches anyObject];
 	CGPoint touchLocation = [self convertTouchToNodeSpace: touch];
